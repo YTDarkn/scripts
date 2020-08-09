@@ -1,0 +1,9 @@
+local EmoteHandler;
+for i,v in next, getgc(true) do
+    if typeof(v) == "table" and v["GeneratePage"] then
+        EmoteHandler = v
+    end
+end
+local GUI = game:GetService("Players").LocalPlayer.PlayerGui.MainGUI.Game:FindFirstChild("Emotes")
+local EmoteList = {"headless","sit","zen","ninja","floss","dab"}
+EmoteHandler.GeneratePage(EmoteList, GUI, "Unlocked Emotes")
